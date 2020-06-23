@@ -8,12 +8,13 @@ var QuestionAnswer = [
 
 var numberQ = 0;
 var puntos = 0;
-var start = document.getElementsByClassName("start")[0];
-var next= document.getElementsByClassName("next")[0];
-var info = document.getElementsByClassName("info")[0];
-var question = document.getElementsByClassName("question")[0];
-var answers = document.getElementsByClassName("answers")[0];
-var questionQ = document.getElementsByClassName("questionQ")[0];
+const start = document.getElementsByClassName("start")[0];
+const next= document.getElementsByClassName("next")[0];
+const info = document.getElementsByClassName("info")[0];
+const question = document.getElementsByClassName("question")[0];
+const answers = document.getElementsByClassName("answers")[0];
+const questionQ = document.getElementsByClassName("questionQ")[0];
+var buttonClicked ;
 
 
 
@@ -22,31 +23,24 @@ window.onload = function (){
 }
 
 function init () {
-    var op = 0;
-    start.addEventListener("click", quiz);
-    return;
-    
+    start.addEventListener("click", quiz);  
 }
 
 function quiz (){
-        
-    next.addEventListener("click", check);
-    /*let lengthA = QuestionAnswer[numberQ].length - 2;*/
+    
     if(numberQ >= QuestionAnswer.length){
         final();
         return;
-
     }
+
     if (numberQ === 0){
         start.classList.add("hide");
         info.classList.add("hide");
         answers.classList.remove("hide");
-        question.classList.remove("hide");
-        next.classList.remove("hide");
-
-        
+        question.classList.remove("hide");       
     }
-    
+    next.classList.add("hide");
+    answers.innerHTML = "";
     questionQ.textContent = QuestionAnswer[numberQ][0];
     let btn1 = document.createElement("button");
     let btn2 = document.createElement("button");
@@ -57,28 +51,29 @@ function quiz (){
         listBtn[i].classList.add("answer");
         listBtn[i].textContent = QuestionAnswer[numberQ][i+1];
         answers.appendChild(listBtn[i]);
-        listBtn[i].addEventListener("click",check);
+        listBtn[i].addEventListener("click",showNext);
     }
 
 }   
 
 
-function check (e){
-    let target = e.target;
+function showNext (e){
+    buttonClicked = e.target;
+    next.classList.remove("hide");
+    next.addEventListener("click", check); 
+      
+}
 
-    if (target.textContent != 'Next'){
-        
-        if(target.textContent === QuestionAnswer[numberQ][5]){
-            puntos += 1; 
-        }   
+function check () {
+    if(buttonClicked.textContent === QuestionAnswer[numberQ][5]){
+        puntos += 1; 
     }
     numberQ += 1;
-    answers.innerHTML = "";
-    quiz()
-
+    quiz();
 }
 
 function final (){ 
+    answers.innerHTML = "";
     question.classList.add("hide");
     info.classList.remove("hide"); 
     next.classList.add("hide");

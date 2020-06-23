@@ -23,6 +23,8 @@ body{
     margin: auto;
     margin-top: 10vh;
     background-color: whitesmoke;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px;
 
 }
 
@@ -37,13 +39,14 @@ body{
 .question{
     height: 10vh;
     width: 100%;
+    margin-bottom: 5px;
     text-align: center;
 }
 
 
 .questionQ{
     font-size: 20px;
-    padding-top: 5%;
+    padding-top: 2px;
 }
 
 .hide{
@@ -55,7 +58,7 @@ body{
 
 }
 .next{
-    height: 8vh;
+    height: 6vh;
     min-height: 20px;
     min-width: 70px;
     width: 6vw;
@@ -86,20 +89,21 @@ body{
 
 
 .answers{
-    margin-top: 5vh;
-    margin-bottom: 3vh;
-    height: 40vh;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    margin:auto;
+    height: 50%;
+    width: 70%;
+    max-width: 300px;
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    column-gap: 2px;
+    row-gap: 2px;
     align-items: center;
 }
 
 .answer{
-    margin: 2px 4px 2px 4px;
+    margin: auto;
     height: 8vh;
-    width: 7vw;
+    width: 6vw;
     min-width: 91.2px;
     min-height: 25px;
     font-size: 13px;
@@ -114,9 +118,19 @@ body{
     background-color: var(--dark-blue)
 }
 
-@media (max-width: 335px){
+@media (max-width: 410px){
+    .answers{
+        grid-template-columns: repeat(1,auto);
+    }
 
     .questionQ{
         font-size: 15px;
     }
+}
+
+@media (max-height: 540px){
+    .questionQ{
+        font-size: 15px;
+    }
+
 }
