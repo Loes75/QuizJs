@@ -82,6 +82,6 @@ function final (){
     question.classList.add("hide");
     info.classList.remove("hide"); 
     next.classList.add("hide");
-    info.firstElementChild.textContent = `Obtuviste un total de ${puntos.toString()} puntos`;
+    info.firstElementChild.textContent = `Obtuviste un total de ${puntos.toString()} entre 5 posibles puntos`;
     return;
 }
