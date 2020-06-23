@@ -4,8 +4,16 @@
     font-family: 'Pangolin', cursive;
 }
 
+:root{
+    --light-blue: #25CED1;
+    --dark-blue: #0B4F6C;
+    --light-violet: #9b25d1;
+    --dark-violet: #330847;
+
+}
+
 body{
-    background-color: #25CED1;
+    background-color: var(--light-blue);
     
 }
 .container{
@@ -53,27 +61,27 @@ body{
     width: 6vw;
     border-radius: 15%;
     font-size: 15px;
-    background-color: #9b25d1;
+    background-color: var(--light-violet);
     color: whitesmoke;
     font-weight: bold;
     border: none;
 }
 .next:hover{
-    background-color: #330847;
+    background-color: var(--dark-violet);
 }
 .start{
     height: 50px;
     width: 100px;
     border-radius: 15%;
     font-size: 15px;
-    background-color: #25CED1;
+    background-color:  var(--light-blue);
     color: whitesmoke;
     font-weight: bold;
     border: none;
 }
 
 .start:hover{
-    background-color: #0B4F6C;
+    background-color: var(--dark-blue);
 }
 
 
@@ -95,7 +103,7 @@ body{
     min-width: 91.2px;
     min-height: 25px;
     font-size: 13px;
-    background-color: #25CED1;
+    background-color: var(--light-blue);
     color: whitesmoke;
     font-weight: bold;
     border-radius: 15%;
@@ -103,7 +111,7 @@ body{
 }
 
 .answer:hover{
-    background-color: #0B4F6C;
+    background-color: var(--dark-blue)
 }
 
 @media (max-width: 335px){
