@@ -19,7 +19,8 @@ body{
 .container{
     width: 60vw;
     max-width: 400px;
-    height: 70vh;
+    min-height: 60vh;
+    padding: 10px 0px;
     margin: auto;
     margin-top: 10vh;
     background-color: whitesmoke;
@@ -30,14 +31,12 @@ body{
 
 .info{
     padding-top: 10vh;
-    height: 10vh;
     width: 100%;
     text-align: center;
     
 }
 
 .question{
-    height: 10vh;
     width: 100%;
     margin-bottom: 5px;
     text-align: center;
@@ -90,13 +89,12 @@ body{
 
 .answers{
     margin:auto;
-    height: 50%;
-    width: 70%;
-    max-width: 300px;
+    margin-top: 10vh;
+    max-width: 200px;
     display: grid;
     grid-template-columns: repeat(2,auto);
     column-gap: 2px;
-    row-gap: 2px;
+    row-gap: 15px;
     align-items: center;
 }
 
@@ -121,6 +119,8 @@ body{
 @media (max-width: 410px){
     .answers{
         grid-template-columns: repeat(1,auto);
+        row-gap: 4px;
+        margin-top: 5px;
     }
 
     .questionQ{
